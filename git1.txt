@@ -1,0 +1,93 @@
+﻿// 初始化全局信息
+git config --global user.name 'you name'
+git config --global user.email 'you email'
+
+// 初始化代码仓库
+git init
+// 添加文件到仓库 可以是具体的文件对象 .表示所有文件
+git add [fileName][.]
+
+// 提交文件
+git commit -m '提交描述'
+
+// 查看提交日志
+git log
+
+// 查看一条修改日志
+git log [修改编号] -1
+
+// 查看修改日志内容
+git log [修改编号] -1 -p
+
+// 查看提交状态
+git status
+
+// 添加忽略文件 在当前需要提交的文件夹下面建立 .gitigonre文件 添加忽略目录
+
+// 查看更改内容
+git diff
+
+// 撤销未提交的修改记录
+git checkout [文件路径]
+
+// 撤销添加 然后执行 checkout 命令进行撤销
+git reset HEAD [文件路径]
+
+
+
+
+// 查看分支
+git branch
+
+// 新建分支
+git branch [version1.0] //分支名称
+
+// 切换到分支
+git checkout [vaerion1.0]
+
+// 合并分支与主干
+git checkout master
+git merge [version1.0]
+
+// 删除分支
+git branch -D [version1.0]
+
+
+
+// 远程版本协作 克隆代码到本地
+git clone [https://github.com/example/test.git]
+
+// 提交代码到远程仓库  origin 部分指的是远程版本仓库的地址
+git push origin master
+
+// 将远程版本仓库的代码同步到本地(fetch/pull)  fetch 不会合并代码到主干 而是生成origin/master分支
+git fetch origin master
+
+// 查看远程版本库修改内容
+git diff origin/master
+// 将origin/master分支修改的内容合并到主干
+git merge origin/master
+
+// 使用 pull 类似于将 fetch和merge合并 直接将代码合并到主干
+git pull origin master
+
+
+// 将代码托管到github
+
+// github 创建版本库
+// 将远程版本克隆到本地 'https://github.com/test/test.git'
+git clone https://github.com/test/test.git
+
+// 查看当前目录下的文件
+ls -al
+
+// 将所有代码添加到版本库
+git add .
+
+// 本地执行提交操作
+git commit -m '描述信息'
+
+// 将文件提交到远程版本库
+git push origin master
+
+// 再次执行提交代码 上面三步
